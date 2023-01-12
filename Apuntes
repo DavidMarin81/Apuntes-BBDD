@@ -1,106 +1,114 @@
-BBDD
-
-not null -> para que la columna tenga valores nulos
-unique -> todos los valores de la columna son distintos
-default -> valor concreto que tendrá una columna si no se especifica otro
-	create table empleado (
-		id int default ‘AA’,
-	); *Toma el valor ‘AA’ por defecto
-
-Para mostrar las tablas
-Describe empleado;
-
-CREATE
-
-Crear BBDD
-
-drop database if exists empresa;
-create database empresa;
-use empresa;
-
-Crear TABLA
-
-create table empleado (
-	id int,
-	dniEmp varchar (9),
-	nombre varchar (25),
-	salario double,
-	telefono int,
-	idDep int
-);
-
-Crear clave primaria
-alter table empleado add primary key (id);
-
-create table empleado (
-	id int primary key,
-	dniEmp varchar (9),
-	nombre varchar (25),
-	salario double,
-	telefono int,
-	idDep int
-);
-
-create table empleado (
-	id int,
-	dniEmp varchar (9),
-	nombre varchar (25),
-	salario double,
-	telefono int,
-	idDep int
-	primary key (id)
-);
-
-
-Crear clave foránea
-alter table empleado add foreign key (idDep) references departamento (id);
-
-Crear campos únicos
-alter table empleado add unique (dniEmp);
-
-Modificar nombre de la tabla
-alter table empleado rename table old_table to new_table;
-
-Modificar campos de la tabla
-alter table empleado change id idEmpleado int; (valor antiguo –> valor nuevo y especificar tipo)
-
-alter table empleado rename column apellido to apellidos;
-
-Añadir un campo a la tabla
-alter table empleado add column direccion varchar (50);
+###########################################################################################################
+# APUNTES BASE DE DATOS
+###########################################################################################################
+# NOT NULL -> para que la columna tenga valores nulos
+# UNIQUE -> todos los valores de la columna son distintos
+# DEFAULT -> valor concreto que tendrá una columna si no se especifica otro
+·	create table empleado (
+.		id int default ‘AA’,
+.	); *Toma el valor ‘AA’ por defecto
+###########################################################################################################
+# PARA MOSTRAR LAS TABLAS
+#
+# Describe empleado;
+###########################################################################################################
+# CREATE
+###########################################################################################################
+# CREAR BBDD
+#
+# DROP DATABASE IF EXISTS empresa;
+# CREATE DATABASE empresa;
+# USE empresa;
+###########################################################################################################
+# CREAR TABLA
+#
+# CREATE TABLE empleado (
+.	id int,
+.	dniEmp varchar (9),
+.	nombre varchar (25),
+.	salario double,
+.	telefono int,
+.	idDep int
+. );
+###########################################################################################################
+# CREAR CLAVE PRIMARIA
+#
+# ALTER TABLE empleado add primary key (id);
+#
+# CREATE TABLE empleado (
+.	id int primary key,
+.	dniEmp varchar (9),
+.	nombre varchar (25),
+.	salario double,
+.	telefono int,
+.	idDep int
+. );
+.
+# CREATE TABLE empleado (
+.	id int,
+.	dniEmp varchar (9),
+.	nombre varchar (25),
+.	salario double,
+.	telefono int,
+.	idDep int
+.	primary key (id)
+. );
+###########################################################################################################
+# CREAR CLAVE FORANEA
+#
+# ALTER TABLE empleado ADD FOREIGN KEY (idDep) REFERENCES departamento (id);
+###########################################################################################################
+# CREAR CAMPOS UNICOS
+#
+# ALTER TABLE empleado ADD UNIQUE (dniEmp);
+###########################################################################################################
+# MODIFICAR NOMBRE DE LA TABLA
+#
+# ALTER TABLE empleado RENAME TABLE old_table TO new_table;
+###########################################################################################################
+# MODIFICAR CAMPOS DE LA TABLA
+# ALTER TABLE empleado CHANGE id idEmpleado int; (valor antiguo –> valor nuevo especificando tipo)
+.
+# ALTER TABLE empleado RENAME COLUMN apellido TO apellidos;
+###########################################################################################################
+# AÑADIR CAMPO A LA TABLA
+#
+# ALTER TABLE empleado ADD COLUMN direccion varchar (50);
 
 	* Se puede usar FIRST o AFTER nombre_del_campo para posicionar la columna
-alter table empleado add column direccion varchar (50) after apellidos;
+# ALTER TABLE empleado ADD COLUMN direccion varchar (50) AFTER apellidos;
+###########################################################################################################
+# MODIFICAR UN CAMPO PARA QUE NO PUEDA SER NULO
+#
+# ALTER TABLE empleado CHANGE nombre nombre varchar (30) NOT NULL;
 
-Modificar un campo para que no pueda ser nulo
-alter table empleado change nombre nombre varchar (30) not null;
-
-alter table empleado modify nombre varchar (30) not null;
-
-DROP (Elimina los objetos de la base de datos)
-
-alter table empleado drop column direccion;
-alter table empleado drop primary key;
-alter table empleado drop foreign key idDep;
-
-TRUNCATE (Elimina todos los registros de una tabla, incluyendo todos los espacios asignados a los registros)
-
-CHECK
-
-COMMENT (Agrega comentarios al diccionario de datos)
-
-SELECT (Recupera datos de la base de datos)
-
-INSERT (Inserta datos en la tabla)
-
-UPDATE (Actualiza los datos de una tabla)
-
-DELETE (Elimina todos los registros de una tabla)
-
-MERGE (Operación upsert (inserción o actualización))
-
-CALL (Llama a un PL / SQL o subprograma java)
-
-EXPLAIN PLAN (Explica la ruta de acceso a los datos)
-
-LOCK TABLE (Concurrencias de control)
+# ALTER TABLE empleado MODIFY nombre varchar (30) NOT NULL;
+###########################################################################################################
+# DROP (Elimina los objetos de la base de datos)
+###########################################################################################################
+# ALTER TABLE empleado DROP COLUMN direccion;
+# ALTER TABLE empleado DROP PRIMARY KEY;
+# ALTER TABLE empleado DROP FOREIGN KEY idDep;
+###########################################################################################################
+# TRUNCATE (Elimina todos los registros de una tabla, incluyendo todos los espacios asignados a los registros)
+###########################################################################################################
+# CHECK
+###########################################################################################################
+# COMMENT (Agrega comentarios al diccionario de datos)
+###########################################################################################################
+# SELECT (Recupera datos de la base de datos)
+###########################################################################################################
+# INSERT (Inserta datos en la tabla)
+###########################################################################################################
+# UPDATE (Actualiza los datos de una tabla)
+###########################################################################################################
+# DELETE (Elimina todos los registros de una tabla)
+###########################################################################################################
+# MERGE (Operación upsert (inserción o actualización))
+###########################################################################################################
+# CALL (Llama a un PL / SQL o subprograma java)
+###########################################################################################################
+# EXPLAIN PLAN (Explica la ruta de acceso a los datos)
+###########################################################################################################
+# LOCK TABLE (Concurrencias de control)
+###########################################################################################################
