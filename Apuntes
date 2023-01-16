@@ -31,6 +31,14 @@
 .	idDep int
 . );
 ###########################################################################################################
+# CREAR TABLA CON UN CREATE + SELECT
+#
+# CREATE TABLE Pasajeros AS (SELECT idPasajero, Clase, idCabina, Nombre, Edad, Sexo, PadresHijos, Familiares, Sobrevivió, idTicket FROM Titanic_Datos);
+# CREATE TABLE Adquiere AS (SELECT DISTINCT idTicket, Tarifa, Embarque FROM Titanic_Datos);
+.
+. ///////////////Se puede usar el DISTINC para que no repita datos???
+.
+###########################################################################################################
 # CREAR CLAVE PRIMARIA
 #
 # ALTER TABLE empleado add primary key (id);
@@ -65,6 +73,7 @@
 # MODIFICAR NOMBRE DE LA TABLA
 #
 # ALTER TABLE empleado RENAME TABLE old_table TO new_table;
+# RENAME TABLE old_table TO new_table;
 ###########################################################################################################
 # MODIFICAR CAMPOS DE LA TABLA
 # ALTER TABLE empleado CHANGE id idEmpleado int; (valor antiguo –> valor nuevo especificando tipo)
