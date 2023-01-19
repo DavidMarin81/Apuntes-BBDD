@@ -114,6 +114,7 @@ Visitar https://www.w3schools.com/mysql/mysql_sql.asp
 # ALTER TABLE pasajerosTitanic ADD CHECK (Familiares > -1);
 # ALTER TABLE pasajerosTitanic ADD CHECK (Sobrevivió > 0 AND Clase > 0);
 # ALTER TABLE pasajerosTitanic ADD CHECK (Sobrevivió > 0 OR Clase > 0);
+# ALTER TABLE pasajerosTitanic ADD CHECK (PadresHijos IS NOT NULL);
 #
 # COMMENT (Agrega comentarios al diccionario de datos)
 ###########################################################################################################
