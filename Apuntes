@@ -108,12 +108,23 @@ Visitar https://www.w3schools.com/mysql/mysql_sql.asp
 ###########################################################################################################
 # CHECK
 ###########################################################################################################
+#
+# ALTER TABLE pasajerosTitanic ADD CHECK (Clase IN(1, 2, 3));
+# ALTER TABLE pasajerosTitanic ADD CHECK (Sexo IN('fame', 'female'));
+# ALTER TABLE pasajerosTitanic ADD CHECK (Familiares > -1);
+# ALTER TABLE pasajerosTitanic ADD CHECK (Sobrevivió > 0 AND Clase > 0);
+# ALTER TABLE pasajerosTitanic ADD CHECK (Sobrevivió > 0 OR Clase > 0);
+#
 # COMMENT (Agrega comentarios al diccionario de datos)
 ###########################################################################################################
 # SELECT (Recupera datos de la base de datos)
 ###########################################################################################################
 # INSERT (Inserta datos en la tabla)
 ###########################################################################################################
+#
+# INSERT INTO PasajerosTitanic (idPasajero, Sobrevivió, Clase, Nombre)
+#		VALUES ( 1, 0, 3, 'Braund,  Mr. Owen Harris');
+#
 # UPDATE (Actualiza los datos de una tabla)
 ###########################################################################################################
 # DELETE (Elimina todos los registros de una tabla)
