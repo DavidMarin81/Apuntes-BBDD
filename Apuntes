@@ -32,7 +32,7 @@ Visitar https://www.w3schools.com/mysql/mysql_sql.asp
 # CREAR TABLA
 #
 # CREATE TABLE empleado (
-.	id int,
+.	id int NOT NULL AUTO_INCREMENT,  // Crea un valor no nulo y autoincremental
 .	dniEmp varchar (9),
 .	nombre varchar (25),
 .	salario double,
@@ -120,6 +120,7 @@ Visitar https://www.w3schools.com/mysql/mysql_sql.asp
 # ALTER TABLE pasajerosTitanic ADD CHECK (Sobrevivió > 0 AND Clase > 0);
 # ALTER TABLE pasajerosTitanic ADD CHECK (Sobrevivió > 0 OR Clase > 0);
 # ALTER TABLE pasajerosTitanic ADD CHECK (PadresHijos IS NOT NULL);
+# ALTER TABLE pasajerosTitanic ADD CHECK (nombre IS NOT NULL OR nombre ='');
 #
 # COMMENT (Agrega comentarios al diccionario de datos)
 ###########################################################################################################
