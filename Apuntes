@@ -53,24 +53,36 @@ Visitar https://www.w3schools.com/mysql/mysql_sql.asp
  ALTER TABLE empleado add primary key (id);
 
  CREATE TABLE empleado (
-	id int primary key,
-	dniEmp varchar (9),
-	nombre varchar (25),
-	salario double,
-	telefono int,
-	idDep int
+	id INT PRIMARY KEY,
+	dniEmp VARCHAR (9),
+	nombre VARCHAR (25),
+	salario DOUBLE,
+	telefono INT,
+	idDep INT
  );
 
 # CREATE TABLE empleado (
-	id int,
-	dniEmp varchar (9),
-	nombre varchar (25),
-	salario double,
-	telefono int,
-	idDep int
+	id INT,
+	dniEmp VARCHAR (9),
+	nombre VARCHAR (25),
+	salario DOUBLE,
+	telefono INT,
+	idDep INT
 	PRIMARY KEY (id)
 	FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
  );
+ 
+  // Para añadir varias claves primarias //
+  
+  CREATE TABLE Población (
+	ProvinciaISO VARCHAR(2),
+    Nombre VARCHAR(25),
+    Sexo VARCHAR(10),
+    Periodo INT,
+    Total VARCHAR(9),
+    CONSTRAIN PK_Poblacion PRIMARY KEY (ProvinciaISO, Sexo, Periodo)
+ );
+  
 ###########################################################################################################
 # CREAR CLAVE FORANEA
 #
