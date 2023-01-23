@@ -6,132 +6,140 @@ Visitar https://www.w3schools.com/mysql/mysql_sql.asp
 ###########################################################################################################
 # APUNTES BASE DE DATOS
 ###########################################################################################################
-# NOT NULL -> para que la columna tenga valores nulos
-# UNIQUE -> todos los valores de la columna son distintos
-# DEFAULT -> valor concreto que tendrá una columna si no se especifica otro
-·	create table empleado (
-.		id int default ‘AA’,
-.	); *Toma el valor ‘AA’ por defecto
-#
-# SHOW COLLATION WHERE CHARSET = "UTF32"; //Muestra la lista de los elementos que componen "utf32"
-# ALTER DATABASE Titanic CHARACTER SET utf32 COLLATE utf32_spanish2_ci; // Pone la BBDD en español
-#
+ NOT NULL -> para que la columna tenga valores nulos
+ UNIQUE -> todos los valores de la columna son distintos
+ DEFAULT -> valor concreto que tendrá una columna si no se especifica otro
+	create table empleado (
+		id int default ‘AA’,
+	); *Toma el valor ‘AA’ por defecto
+
+ SHOW COLLATION WHERE CHARSET = "UTF32"; //Muestra la lista de los elementos que componen "utf32"
+ ALTER DATABASE Titanic CHARACTER SET utf32 COLLATE utf32_spanish2_ci; // Pone la BBDD en español
+
 ###########################################################################################################
 # PARA MOSTRAR LAS TABLAS
 #
-# Describe empleado;
+ Describe empleado;
 ###########################################################################################################
 # CREATE
 ###########################################################################################################
 # CREAR BBDD
 #
-# DROP DATABASE IF EXISTS empresa;
-# CREATE DATABASE empresa;
-# USE empresa;
+ DROP DATABASE IF EXISTS empresa;
+ CREATE DATABASE empresa;
+ USE empresa;
 ###########################################################################################################
 # CREAR TABLA
 #
-# CREATE TABLE empleado (
-.	id int NOT NULL AUTO_INCREMENT,  // Crea un valor no nulo y autoincremental
-.	dniEmp varchar (9),
-.	nombre varchar (25),
-.	salario double,
-.	telefono int,
-.	idDep int
-. );
+ CREATE TABLE empleado (
+	id int NOT NULL AUTO_INCREMENT,  // Crea un valor no nulo y autoincremental
+	dniEmp varchar (9),
+	nombre varchar (25),
+	salario double,
+	telefono int,
+	idDep int
+ );
 ###########################################################################################################
 # CREAR TABLA CON UN CREATE + SELECT
 #
-# CREATE TABLE Pasajeros AS (SELECT idPasajero, Clase, idCabina, Nombre, Edad, Sexo, PadresHijos, Familiares, Sobrevivió, idTicket FROM Titanic_Datos);
-# CREATE TABLE Adquiere AS (SELECT DISTINCT idTicket, Tarifa, Embarque FROM Titanic_Datos);
+ CREATE TABLE Pasajeros AS (SELECT idPasajero, Clase, idCabina, Nombre, Edad, Sexo, PadresHijos, Familiares, Sobrevivió, idTicket FROM Titanic_Datos);
+ CREATE TABLE Adquiere AS (SELECT DISTINCT idTicket, Tarifa, Embarque FROM Titanic_Datos);
 .
 . ///////////////Se puede usar el DISTINC para que no repita datos???
 .
 ###########################################################################################################
 # CREAR CLAVE PRIMARIA
-#
-# ALTER TABLE empleado add primary key (id);
-#
+
+ ALTER TABLE empleado add primary key (id);
+
+ CREATE TABLE empleado (
+	id int primary key,
+	dniEmp varchar (9),
+	nombre varchar (25),
+	salario double,
+	telefono int,
+	idDep int
+ );
+
 # CREATE TABLE empleado (
-.	id int primary key,
-.	dniEmp varchar (9),
-.	nombre varchar (25),
-.	salario double,
-.	telefono int,
-.	idDep int
-. );
-.
-# CREATE TABLE empleado (
-.	id int,
-.	dniEmp varchar (9),
-.	nombre varchar (25),
-.	salario double,
-.	telefono int,
-.	idDep int
-.	PRIMARY KEY (id)
+	id int,
+	dniEmp varchar (9),
+	nombre varchar (25),
+	salario double,
+	telefono int,
+	idDep int
+	PRIMARY KEY (id)
 	FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
-. );
+ );
 ###########################################################################################################
 # CREAR CLAVE FORANEA
 #
-# ALTER TABLE empleado ADD FOREIGN KEY (idDep) REFERENCES departamento (id);
+ ALTER TABLE empleado ADD FOREIGN KEY (idDep) REFERENCES departamento (id);
 ###########################################################################################################
 # CREAR CAMPOS UNICOS
 #
-# ALTER TABLE empleado ADD UNIQUE (dniEmp);
+ ALTER TABLE empleado ADD UNIQUE (dniEmp);
 ###########################################################################################################
 # MODIFICAR NOMBRE DE LA TABLA
 #
-# ALTER TABLE empleado RENAME TABLE old_table TO new_table;
-# RENAME TABLE old_table TO new_table;
+ ALTER TABLE empleado RENAME TABLE old_table TO new_table;
+ RENAME TABLE old_table TO new_table;
 ###########################################################################################################
 # MODIFICAR CAMPOS DE LA TABLA
-# ALTER TABLE empleado CHANGE id idEmpleado int; (valor antiguo –> valor nuevo especificando tipo)
-.
-# ALTER TABLE empleado RENAME COLUMN apellido TO apellidos;
+ ALTER TABLE empleado CHANGE id idEmpleado int; (valor antiguo –> valor nuevo especificando tipo)
+
+ ALTER TABLE empleado RENAME COLUMN apellido TO apellidos;
 ###########################################################################################################
 # AÑADIR CAMPO A LA TABLA
 #
-# ALTER TABLE empleado ADD COLUMN direccion varchar (50);
+ ALTER TABLE empleado ADD COLUMN direccion varchar (50);
 
 	* Se puede usar FIRST o AFTER nombre_del_campo para posicionar la columna
-# ALTER TABLE empleado ADD COLUMN direccion varchar (50) AFTER apellidos;
+ ALTER TABLE empleado ADD COLUMN direccion varchar (50) AFTER apellidos;
 ###########################################################################################################
 # MODIFICAR UN CAMPO PARA QUE NO PUEDA SER NULO
 #
-# ALTER TABLE empleado CHANGE nombre nombre varchar (30) NOT NULL;
+ ALTER TABLE empleado CHANGE nombre nombre varchar (30) NOT NULL;
 
-# ALTER TABLE empleado MODIFY nombre varchar (30) NOT NULL;
+ ALTER TABLE empleado MODIFY nombre varchar (30) NOT NULL;
 ###########################################################################################################
 # DROP (Elimina los objetos de la base de datos)
-###########################################################################################################
-# ALTER TABLE empleado DROP COLUMN direccion;
-# ALTER TABLE empleado DROP PRIMARY KEY;
-# ALTER TABLE empleado DROP FOREIGN KEY idDep;
+#
+ ALTER TABLE empleado DROP COLUMN direccion;
+ ALTER TABLE empleado DROP PRIMARY KEY;
+ ALTER TABLE empleado DROP FOREIGN KEY idDep;
 ###########################################################################################################
 # TRUNCATE (Elimina todos los registros de una tabla, incluyendo todos los espacios asignados a los registros)
 ###########################################################################################################
 # CHECK
+#
+ ALTER TABLE pasajerosTitanic ADD CHECK (Clase IN(1, 2, 3));
+ ALTER TABLE pasajerosTitanic ADD CHECK (Sexo IN('fame', 'female'));
+ ALTER TABLE pasajerosTitanic ADD CHECK (Familiares > -1);
+ ALTER TABLE pasajerosTitanic ADD CHECK (Sobrevivió > 0 AND Clase > 0);
+ ALTER TABLE pasajerosTitanic ADD CHECK (Sobrevivió > 0 OR Clase > 0);
+ ALTER TABLE pasajerosTitanic ADD CHECK (PadresHijos IS NOT NULL);
+ ALTER TABLE pasajerosTitanic ADD CHECK (nombre IS NOT NULL OR nombre ='');
+#
 ###########################################################################################################
-#
-# ALTER TABLE pasajerosTitanic ADD CHECK (Clase IN(1, 2, 3));
-# ALTER TABLE pasajerosTitanic ADD CHECK (Sexo IN('fame', 'female'));
-# ALTER TABLE pasajerosTitanic ADD CHECK (Familiares > -1);
-# ALTER TABLE pasajerosTitanic ADD CHECK (Sobrevivió > 0 AND Clase > 0);
-# ALTER TABLE pasajerosTitanic ADD CHECK (Sobrevivió > 0 OR Clase > 0);
-# ALTER TABLE pasajerosTitanic ADD CHECK (PadresHijos IS NOT NULL);
-# ALTER TABLE pasajerosTitanic ADD CHECK (nombre IS NOT NULL OR nombre ='');
-#
 # COMMENT (Agrega comentarios al diccionario de datos)
 ###########################################################################################################
 # SELECT (Recupera datos de la base de datos)
 ###########################################################################################################
 # INSERT (Inserta datos en la tabla)
 ###########################################################################################################
-#
-# INSERT INTO PasajerosTitanic (idPasajero, Sobrevivió, Clase, Nombre)
-#		VALUES ( 1, 0, 3, 'Braund,  Mr. Owen Harris');
-#
+
+ INSERT INTO PasajerosTitanic (idPasajero, Sobrevivió, Clase, Nombre)
+		VALUES ( 1, 0, 3, 'Braund,  Mr. Owen Harris');
+
+ INSERT INTO	ComarcasGalicia
+	VALUES 	( 100, 'Arzúa', 10 ),
+		( 101, 'Barbanza', 10 ),
+		( 102, 'A Barcala', 10 ),
+                ( 103, 'Bergantiños', 10 )
+	);
+
+###########################################################################################################
 # UPDATE (Actualiza los datos de una tabla)
 ###########################################################################################################
 # DELETE (Elimina todos los registros de una tabla)
