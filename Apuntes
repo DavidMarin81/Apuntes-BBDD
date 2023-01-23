@@ -12,6 +12,10 @@ Visitar https://www.w3schools.com/mysql/mysql_sql.asp
 ·	create table empleado (
 .		id int default ‘AA’,
 .	); *Toma el valor ‘AA’ por defecto
+#
+# SHOW COLLATION WHERE CHARSET = "UTF32"; //Muestra la lista de los elementos que componen "utf32"
+# ALTER DATABASE Titanic CHARACTER SET utf32 COLLATE utf32_spanish2_ci; // Pone la BBDD en español
+#
 ###########################################################################################################
 # PARA MOSTRAR LAS TABLAS
 #
@@ -64,7 +68,8 @@ Visitar https://www.w3schools.com/mysql/mysql_sql.asp
 .	salario double,
 .	telefono int,
 .	idDep int
-.	primary key (id)
+.	PRIMARY KEY (id)
+	FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
 . );
 ###########################################################################################################
 # CREAR CLAVE FORANEA
