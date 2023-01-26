@@ -167,3 +167,32 @@ Visitar https://www.w3schools.com/mysql/mysql_sql.asp
 ###########################################################################################################
 # LOCK TABLE (Concurrencias de control)
 ###########################################################################################################
+
+
+
+#-------------------------------------------------------------------------------------------------------------------
+#	DICCIONARIO ASOCIADO
+#-------------------------------------------------------------------------------------------------------------------
+# TITANIC = { Titanic } * el archivo del Titanic *
+# Pasajeros = @idPasajero + Clase + idCabina + Nombre + Edad + Sexo + PadresHijos + Familiares + Sobrevivió + idTicket
+# Adquiere = @idTicket + Tarifa + Embarque
+# idPasajero = * identificador interno de un pasajero, campo clave del depósito Pasajeros ** [1...999] **un número entre 1 y 99 *
+# Clase = 1{ digito [1|2|3] }
+# idCabina = { ([A] + digito [1..370]) OR _([B] + digito [1..168]) OR ([C] + digito [1..297]) } 
+#	** El Titanic tenía 370 cabinas de primera clase (A), 168 cabinas de segunda clase (B) y 297 cabinas de tercera clase **
+# Nombre = 1{ Apellido (en formato letra UpperCase) + ',' + Nombre (en formato letra UpperCase }100 ** Apellido y nombre debe estar separado por una coma. 
+# Edad = 1{ dígito }3
+# Sexo = [ 'male' | 'female' ]
+# PadresHijos = 1{ digito }
+# Familiares = 1{ digito }
+# Sobrevivió = [ 0 | 1 ]
+# idTicket = 1{ letras, digitos }50
+#
+# idTicket = 1{ letras, digitos }50 * identificador interno de un ticket, campo clave del depósito Adquiere ** [1...50] *
+# Tarifa = 1{ digitos }8
+# Embarque = 1{ 'C' | 'Q' | 'S' }  ** 'C' -> Cheburgo | 'Q' -> Queenstown | 'S' -> Southampton **
+#
+# digito = [ 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 ]
+# letra = [A...Z | a..z]
+#
+
