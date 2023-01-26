@@ -82,6 +82,9 @@ Visitar https://www.w3schools.com/mysql/mysql_sql.asp
     Total VARCHAR(9),
     CONSTRAIN PK_Poblacion PRIMARY KEY (ProvinciaISO, Sexo, Periodo)
  );
+ 
+ salario DECIMAL (4, 1), # 3 CIFRAS Y UN DECIMAL = (NUMERO TOTAL DE DIGITOS - INCLUYENDO LOS DECIMALES, CUANTOS VAN A SER DECIMALES)
+ EN ESTE CASO, HABRÁ 4 NUMEROS EN TOTAL, DE LOS CUALES 1 VA A SER DECIMAL ej.- 456,5
   
 ###########################################################################################################
 # CREAR CLAVE FORANEA
