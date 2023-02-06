@@ -3,19 +3,19 @@
 **APUNTES DE BBDD**
 - [NOT NULL]()
 	- para  que la columna tenga valores nulos
-- UNIQUE 
+- [UNIQUE]()
 	- todos los valores de la columna son distintos
-- DEFAULT
+- [DEFAULT]()
 	- valor concreto que tendrá una columna si no se especifica otro
 		- **CREATE TABLE Empleado (
 				 id INT DEFAULT 'AA',
 				);**
 			 _Toma el valor 'AA' por defecto_
-- SHOW COLLATION WHERE CHARSET = "UTF32";
+- [SHOW COLLATION WHERE CHARSET = "UTF32";]()
 	_Muestra la lista de los elementos que componen "utf32"_
-- Para mostrar las tablas
+- [Para mostrar las tablas]()
 	 - **DESCRIBE Empleado;**
-- CREAR BBDD
+- [CREAR BBDD]()
 	- **CREATE TABLE empleado (
 	id int NOT NULL AUTO_INCREMENT,   _Crea un valor no nulo y 		  autoincremental_
 	dniEmp varchar (9),
@@ -24,10 +24,10 @@
 	telefono int,
 	idDep int
  );**
- - CREAR TABLA CON UN CREATE + SELECT
+ - [CREAR TABLA CON UN CREATE + SELECT]()
 	 - **CREATE TABLE Pasajeros AS (SELECT idPasajero, Clase, idCabina, Nombre, Edad, Sexo, PadresHijos, Familiares, Sobrevivió, idTicket FROM Titanic_Datos);**
 	 - **CREATE TABLE Adquiere AS (SELECT DISTINCT idTicket, Tarifa, Embarque FROM Titanic_Datos);**
-- CREAR CLAVE PRIMARIA
+- [CREAR CLAVE PRIMARIA]()
 	- **ALTER TABLE empleado add primary key (id);**
 
 	 - **CREATE TABLE empleado (
@@ -61,28 +61,28 @@
 			- **salario DECIMAL (4, 1)**
 			- _3 CIFRAS Y UN DECIMAL = (NUMERO TOTAL DE DIGITOS - INCLUYENDO LOS DECIMALES, CUANTOS VAN A SER DECIMALES)
  EN ESTE CASO, HABRÁ 4 NUMEROS EN TOTAL, DE LOS CUALES 1 VA A SER DECIMAL ej.- 456,5_
-- CREAR CLAVE FORANEA
+- [CREAR CLAVE FORANEA]()
 	- **ALTER TABLE empleado ADD FOREIGN KEY (idDep) REFERENCES departamento (id);**
-- CREAR CAMPOS UNICOS
+- [CREAR CAMPOS UNICOS]()
 	- **ALTER TABLE empleado ADD UNIQUE (dniEmp);**
-- MODIFICAR NOMBRE DE LA TABLA
+- [MODIFICAR NOMBRE DE LA TABLA]()
 	- **ALTER TABLE empleado RENAME TABLE old_table TO new_table;**
 	- **RENAME TABLE old_table TO new_table;**
-- MODIFICAR CAMPOS DE LA TABLA
+- [MODIFICAR CAMPOS DE LA TABLA]()
 	- **ALTER TABLE empleado CHANGE id idEmpleado int;** (valor antiguo –> valor nuevo especificando tipo)
 	- **ALTER TABLE empleado RENAME COLUMN apellido TO apellidos;**
-- AÑADIR CAMPO A LA TABLA
+- [AÑADIR CAMPO A LA TABLA]()
 	- **ALTER TABLE empleado ADD COLUMN direccion varchar (50);**
 	- _Se puede usar_ **FIRST** o **AFTER** _***nombre_del_campo***_ _para posicionar la columna_
 	- **ALTER TABLE empleado ADD COLUMN direccion varchar (50) AFTER apellidos;**
-- MODIFICAR UN CAMPO PARA QUE NO PUEDA SER NULO
+- [MODIFICAR UN CAMPO PARA QUE NO PUEDA SER NULO]()
 	- **ALTER TABLE empleado CHANGE nombre nombre varchar (30) NOT NULL;**
 	- **ALTER TABLE empleado MODIFY nombre varchar (30) NOT NULL;**
-- ELIMINAR LA TABLA
+- [ELIMINAR LA TABLA]()
 	- **ALTER TABLE empleado DROP COLUMN direccion;**
 	- **ALTER TABLE empleado DROP PRIMARY KEY;**
 	- **ALTER TABLE empleado DROP FOREIGN KEY idDep;**
-- COMPROBACIONES DE DATOS (CHECK)
+- [COMPROBACIONES DE DATOS (CHECK)]()
 	- **ALTER TABLE pasajerosTitanic ADD CHECK (Clase IN(1, 2, 3));**
 	- **ALTER TABLE pasajerosTitanic ADD CHECK (Sexo IN('fame', 'female'));**
 	- **ALTER TABLE pasajerosTitanic ADD CHECK (Familiares > -1);**
@@ -91,7 +91,7 @@
 	- **ALTER TABLE pasajerosTitanic ADD CHECK (PadresHijos IS NOT NULL);**
 	- **ALTER TABLE pasajerosTitanic ADD CHECK (nombre IS NOT NULL OR nombre ='');**
 	- 
-- CONSULTAS (**SELECT**)
+- [CONSULTAS (**SELECT**)]()
 	- **SELECT * FROM diamantes;**
 	- **SELECT ID, nombre FROM diamantes;**
 	- **SELECT DISTINCT precio FROM diamantes;** *"Muestra los precios sin repetir"*
@@ -104,10 +104,10 @@
 	Muestra solo las edades que no sean 18, 35, 45
 
 	- **SELECT nombre, edad FROM alumnos WHERE edad = 18 OR edad = 35;**
-- PARA CAMBIAR EL NOMBRE A LA COLUMNA
+- [PARA CAMBIAR EL NOMBRE A LA COLUMNA]()
 	- **SELECT AlumnosID AS ID, name AS nombre FROM alumnos;**
 	- 
-- INSERTAR VALORES (**INSERT**)
+- [INSERTAR VALORES (**INSERT**)]()
 	- **INSERT INTO PasajerosTitanic (idPasajero, Sobrevivió, Clase, Nombre)
 		VALUES ( 1, 0, 3, 'Braund,  Mr. Owen Harris');**
 		
@@ -118,7 +118,7 @@
                 ( 103, 'Bergantiños', 10 )
 	);**
 
-- DICCIONARIO ASOCIADO
+- [DICCIONARIO ASOCIADO]()
 	- TITANIC = { Titanic } * el archivo del Titanic *
 	- Pasajeros = @idPasajero + Clase + idCabina + Nombre + Edad + Sexo + PadresHijos + Familiares + Sobrevivió + idTicket
 	 - Adquiere = @idTicket + Tarifa + Embarque
