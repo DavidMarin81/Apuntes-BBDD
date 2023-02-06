@@ -1,6 +1,6 @@
-**BBDD**
+- **BBDD**
 	- Visitar https://www.w3schools.com/mysql/mysql_sql.asp
-**APUNTES DE BBDD**
+- **APUNTES DE BBDD**
 - [NOT NULL]()
 	- para  que la columna tenga valores nulos
 - [UNIQUE]()
