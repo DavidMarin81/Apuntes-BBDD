@@ -1,7 +1,7 @@
 **BBDD**
 	- Visitar https://www.w3schools.com/mysql/mysql_sql.asp
 **APUNTES DE BBDD**
-- (NOT NULL)
+- NOT NULL
 	- para  que la columna tenga valores nulos
 - UNIQUE 
 	- todos los valores de la columna son distintos
