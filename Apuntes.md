@@ -18,9 +18,9 @@
 	_Pone la BBDD en español
 	
 - [CREATE DATABASE]()
-	- DROP DATABASE IF EXISTS empresa;
- 	CREATE DATABASE empresa;
- 	USE empresa;
+	- **DROP DATABASE IF EXISTS empresa;**
+ 	- **CREATE DATABASE empresa;**
+ 	- **USE empresa;**
 - [Para mostrar las tablas]()
 	 - **DESCRIBE Empleado;**
 - [CREAR BBDD]()
