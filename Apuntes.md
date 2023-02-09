@@ -110,8 +110,12 @@
 	- **SELECT nombre, edad FROM alumnos WHERE edad NOT IN (18, 35, 45);** 
 	- Muestra solo las edades que no sean 18, 35, 45
 	- **SELECT nombre, edad FROM alumnos WHERE edad = 18 OR edad = 35;**
-- [CONSULTAS (**SELECT**)]()
-	
+- [CONSULTAS CON OPERADORES DE RANGO(**SELECT**)]()
+	- **SELECT * FROM diamante WHERE precio >= 8000 AND precio <= 10000;**
+	- **SELECT * FROM diamante WHERE NOT(precio < 8000 OR precio > 10000);**
+	- **SELECT * FROM diamante WHERE precio BETWEEN (8000, 10000);**
+	- **SELECT * FROM diamante WHERE NOT(precio BETWEEN 0 AND 7999 OR precio BETWEEN 10001 AND 100000);**
+	- **SELECT * FROM Recetas WHERE NOT(comensales between 2 AND 2) OR NOT(valoracion between 1 AND 2);**
 - [PARA CAMBIAR EL NOMBRE A LA COLUMNA]()
 	- **SELECT AlumnosID AS ID, name AS nombre FROM alumnos;**
 	- 
