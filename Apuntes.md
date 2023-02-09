@@ -99,20 +99,19 @@
 	- **ALTER TABLE pasajerosTitanic ADD CHECK (Sobrevivió > 0 OR Clase > 0);**
 	- **ALTER TABLE pasajerosTitanic ADD CHECK (PadresHijos IS NOT NULL);**
 	- **ALTER TABLE pasajerosTitanic ADD CHECK (nombre IS NOT NULL OR nombre ='');**
-	- 
 - [CONSULTAS (**SELECT**)]()
 	- **SELECT * FROM diamantes;**
 	- **SELECT ID, nombre FROM diamantes;**
 	- **SELECT DISTINCT precio FROM diamantes;** *"Muestra los precios sin repetir"*
 	- *Muestra los valores que esten dentro del parentesis. La coma actua como un **"OR"***
-	**SELECT nombre, edad FROM alumnos WHERE edad IN (18, 35, 45);**
-	 *Muestra solo las edades que sean 18, 35, 45*
-	
+	- **SELECT nombre, edad FROM alumnos WHERE edad IN (18, 35, 45);**
+	- *Muestra solo las edades que sean 18, 35, 45*
 	- *No muestra los valores que estan dentro del parentesis. La coma actua con un **"AND"***
-**SELECT nombre, edad FROM alumnos WHERE edad NOT IN (18, 35, 45);** 
-	Muestra solo las edades que no sean 18, 35, 45
-
+	- **SELECT nombre, edad FROM alumnos WHERE edad NOT IN (18, 35, 45);** 
+	- Muestra solo las edades que no sean 18, 35, 45
 	- **SELECT nombre, edad FROM alumnos WHERE edad = 18 OR edad = 35;**
+- [CONSULTAS (**SELECT**)]()
+	
 - [PARA CAMBIAR EL NOMBRE A LA COLUMNA]()
 	- **SELECT AlumnosID AS ID, name AS nombre FROM alumnos;**
 	- 
