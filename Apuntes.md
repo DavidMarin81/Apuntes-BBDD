@@ -23,6 +23,7 @@
  	- **USE empresa;**
 - [Para mostrar las tablas]()
 	 - **DESCRIBE Empleado;**
+	 - **SHOW tables;** _Muestra todas las tablas de la BBDD_
 - [CREAR BBDD]()
 	- **CREATE TABLE empleado (
 	id int NOT NULL AUTO_INCREMENT,   _Crea un valor no nulo y 		  autoincremental_
