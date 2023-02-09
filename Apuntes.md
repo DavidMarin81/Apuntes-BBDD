@@ -116,9 +116,14 @@
 	- **SELECT * FROM diamante WHERE precio BETWEEN (8000, 10000);**
 	- **SELECT * FROM diamante WHERE NOT(precio BETWEEN 0 AND 7999 OR precio BETWEEN 10001 AND 100000);**
 	- **SELECT * FROM Recetas WHERE NOT(comensales between 2 AND 2) OR NOT(valoracion between 1 AND 2);**
+- [CONSULTAS CON OPERADORES DE VALOR NULO(**SELECT**)]()
+	- **SELECT * FROM oficina WHERE ciudad IS NULL;**
+	- **SELECT * FROM Diamante WHERE color IS NOT NULL;**
+	- **SELECT * FROM Recetas WHERE Dificultad IS NULL AND Tipo IS NOT NULL;**
 - [PARA CAMBIAR EL NOMBRE A LA COLUMNA]()
 	- **SELECT AlumnosID AS ID, name AS nombre FROM alumnos;**
-	- 
+	- **select * from oficina where ciudad IS NULL;**
+	- **select * from Diamante where color IS NOT NULL;**
 - [INSERTAR VALORES (**INSERT**)]()
 	- **INSERT INTO PasajerosTitanic (idPasajero, Sobrevivió, Clase, Nombre)
 		VALUES ( 1, 0, 3, 'Braund,  Mr. Owen Harris');**
