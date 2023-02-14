@@ -132,7 +132,12 @@
 		( 102, 'A Barcala', 10 ),
                 ( 103, 'Bergantiños', 10 )
 	);**
-
+- [LIKE - REGEXP]()
+	- _Muestra los datos del número de mujeres que acaben en 0._
+	- **SELECT * FROM PoblacionGalicia where mujeres LIKE '%0';**
+	- **SELECT * FROM PoblacionGalicia where mujeres REGEXP '0$';**
+	- _Muestra los datos en los que el número de mujeres contenga un 10 y el de hombres no._
+	- **SELECT * FROM PoblacionGalicia where mujeres REGEXP '(10)' AND hombres NOT REGEXP '(10)';**
 - [DICCIONARIO ASOCIADO]()
 	- TITANIC = { Titanic } * el archivo del Titanic *
 	- Pasajeros = @idPasajero + Clase + idCabina + Nombre + Edad + Sexo + PadresHijos + Familiares + Sobrevivió + idTicket
