@@ -122,8 +122,6 @@
 	- **SELECT * FROM Recetas WHERE Dificultad IS NULL AND Tipo IS NOT NULL;**
 - [PARA CAMBIAR EL NOMBRE A LA COLUMNA]()
 	- **SELECT AlumnosID AS ID, name AS nombre FROM alumnos;**
-	- **select * from oficina where ciudad IS NULL;**
-	- **select * from Diamante where color IS NOT NULL;**
 - [INSERTAR VALORES (**INSERT**)]()
 	- **INSERT INTO PasajerosTitanic (idPasajero, Sobrevivió, Clase, Nombre)
 		VALUES ( 1, 0, 3, 'Braund,  Mr. Owen Harris');**
