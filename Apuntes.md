@@ -142,7 +142,10 @@
 	- Elimina todos los registros de una tabla, incluyendo todos los espacios asignados a los registros se eliminan
 - [DROP]()
  	- Elimina los objetos de la base de datos
-
+- [ORDER BY]()
+	- **SELECT * FROM Customers ORDER BY Country;**
+- [HAVING]()
+	- **SELECT nombre_equipo, AVG(Peso) FROM jugadores GROUP BY nombre_equipo HAVING AVG(Peso) > 228 ORDER BY AVG(Peso);**
 - [LIKE - REGEXP]()
 	- _Muestra los datos del número de mujeres que acaben en 0._
 	- **SELECT * FROM PoblacionGalicia where mujeres LIKE '%0';**
