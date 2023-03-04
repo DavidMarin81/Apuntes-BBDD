@@ -70,10 +70,14 @@
 			- **salario DECIMAL (4, 1)**
 			- _3 CIFRAS Y UN DECIMAL = (NUMERO TOTAL DE DIGITOS - INCLUYENDO LOS DECIMALES, CUANTOS VAN A SER DECIMALES)
  EN ESTE CASO, HABRÁ 4 NUMEROS EN TOTAL, DE LOS CUALES 1 VA A SER DECIMAL ej.- 456,5_
+- [CREACION DE CLAVES PRIMARIAS]()
+	- **ALTER TABLE empleado ADD CONSTRAINT empleado_clave_primaria PRIMARY KEY (id);**
 - [CREAR CLAVE FORANEA]()
 	- **ALTER TABLE empleado ADD FOREIGN KEY (idDep) REFERENCES departamento (id);**
+	- **ALTER TABLE empleado ADD CONSTRAINT empleado_departamento FOREIGN KEY (id) REFERENCES Departamento (id);**
 - [CREAR CAMPOS UNICOS]()
 	- **ALTER TABLE empleado ADD UNIQUE (dniEmp);**
+	- **ALTER TABLE Jefe MODIFY dni VARCHAR(9) UNIQUE;**
 - [MODIFICAR NOMBRE DE LA TABLA]()
 	- **ALTER TABLE empleado RENAME TABLE old_table TO new_table;**
 	- **RENAME TABLE old_table TO new_table;**
@@ -87,6 +91,8 @@
 - [MODIFICAR UN CAMPO PARA QUE NO PUEDA SER NULO]()
 	- **ALTER TABLE empleado CHANGE nombre nombre varchar (30) NOT NULL;**
 	- **ALTER TABLE empleado MODIFY nombre varchar (30) NOT NULL;**
+-[ELIMIAR UN CAMPO]()
+	- **ALTER TABLE Personas DROP Apellidos;**
 - [ELIMINAR LA TABLA]()
 	- **ALTER TABLE empleado DROP COLUMN direccion;**
 	- **ALTER TABLE empleado DROP PRIMARY KEY;**
