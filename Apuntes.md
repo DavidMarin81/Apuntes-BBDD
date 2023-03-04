@@ -132,6 +132,11 @@
 		( 102, 'A Barcala', 10 ),
                 ( 103, 'Bergantiños', 10 )
 	);**
+- [TRUNCATE]()
+	- Elimina todos los registros de una tabla, incluyendo todos los espacios asignados a los registros se eliminan
+- [DROP]()
+ 	- Elimina los objetos de la base de datos
+
 - [LIKE - REGEXP]()
 	- _Muestra los datos del número de mujeres que acaben en 0._
 	- **SELECT * FROM PoblacionGalicia where mujeres LIKE '%0';**
@@ -139,6 +144,7 @@
 	- _Muestra los datos en los que el número de mujeres contenga un 10 y el de hombres no._
 	- **SELECT * FROM PoblacionGalicia where mujeres REGEXP '(10)' AND hombres NOT REGEXP '(10)';**
 - [DICCIONARIO ASOCIADO]()
+	- COMMENT -> Agrega comentarios al diccionario de datos
 	- TITANIC = { Titanic } * el archivo del Titanic *
 	- Pasajeros = @idPasajero + Clase + idCabina + Nombre + Edad + Sexo + PadresHijos + Familiares + Sobrevivió + idTicket
 	 - Adquiere = @idTicket + Tarifa + Embarque
@@ -158,3 +164,13 @@
 	- Embarque = 1{ 'C' | 'Q' | 'S' }  ** 'C' -> Cheburgo | 'Q' -> Queenstown | 'S' -> Southampton **
 	- digito = [ 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 ]
 	- letra = [A...Z | a..z]
+	- **NOTACION**
+	- = está compuesto de
+	- + y
+	- () opcional
+	- {} iteración
+	- [] selección
+	- | separador
+	- ** comentarios
+	- "" literales (valor a utilizar)
+	- @ identificador en caso de almacenes
