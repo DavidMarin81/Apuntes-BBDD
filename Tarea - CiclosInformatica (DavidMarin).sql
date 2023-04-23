@@ -32,9 +32,9 @@ CREATE TABLE Modulo (
 					horas 				INT,
 					curso 				INT,
 					ciclo 				TEXT,
-	CONSTRAINT		PK_Modulo			PRIMARY KEY ( idModulo ),					#PK  -> PRIMARY KEY
-	#CONSTRAINT		UK_Sigla			UNIQUE KEY 	( sigla ),						#UK  -> UNIQUE KEY
-	CONSTRAINT		UK_Codigo			UNIQUE KEY 	( codigo ),						#UK  -> UNIQUE KEY
+	CONSTRAINT		PK_Modulo			PRIMARY KEY 	( idModulo ),					#PK  -> PRIMARY KEY
+	#CONSTRAINT		UK_Sigla			UNIQUE KEY 	( sigla ),					#UK  -> UNIQUE KEY
+	CONSTRAINT		UK_Codigo			UNIQUE KEY 	( codigo ),					#UK  -> UNIQUE KEY
 	CONSTRAINT		INN_Sigla			CHECK 		( sigla 		IS NOT NULL ),	#INN -> IS NOT NULL
 	CONSTRAINT		INN_Codigo			CHECK 		( codigo 		IS NOT NULL ),	#INN -> IS NOT NULL
 	CONSTRAINT		INN_Nombre			CHECK 		( nombre 		IS NOT NULL ),	#INN -> IS NOT NULL
@@ -61,41 +61,41 @@ CREATE TABLE Modulo (
 #	AÑADIMOS LOS DATOS
 #*******************************************************************************************
 INSERT INTO Modulo( sigla, codigo, nombre, horas, curso, ciclo )	VALUES
-		( 'ISO',	'MP0369',	'Implantación de sistemas operativos',							213, 1, 'ASIR' ),
-        ( 'PAR',	'MP0370',	'Planificación e administración de redes',						213, 1,	'ASIR' ),
-        ( 'FH',		'MP0371',	'Fundamentos de hardware',										107, 1,	'ASIR' ),
-        ( 'XBD',	'MP0372',	'Xestión de bases de datos',									187, 1, 'ASIR' ),
+		( 'ISO',	'MP0369',	'Implantación de sistemas operativos',				213, 1, 'ASIR' ),
+        ( 'PAR',	'MP0370',	'Planificación e administración de redes',				213, 1,	'ASIR' ),
+        ( 'FH',		'MP0371',	'Fundamentos de hardware',						107, 1,	'ASIR' ),
+        ( 'XBD',	'MP0372',	'Xestión de bases de datos',						187, 1, 'ASIR' ),
         ( 'LMSXE', 	'MP0373',	'Linguaxes de marcas e sistemas de xestión empresarial',		133, 1,	'ASIR,DAM,DAW' ),
-        ( 'ASO',	'MP0374',	'Administración de sistemas operativos',						140, 2, 'ASIR' ),
-        ( 'SRI',	'MP0375',	'Servizos de rede e internet',									140, 2, 'ASIR' ),
-        ( 'IAW',	'MP0376',	'Implantación de aplicacións web',								122, 2, 'ASIR' ),
+        ( 'ASO',	'MP0374',	'Administración de sistemas operativos',				140, 2, 'ASIR' ),
+        ( 'SRI',	'MP0375',	'Servizos de rede e internet',						140, 2, 'ASIR' ),
+        ( 'IAW',	'MP0376',	'Implantación de aplicacións web',					122, 2, 'ASIR' ),
         ( 'ASXBD',	'MP0377',	'Administración de sistemas xestores de bases de datos',		 70, 2, 'ASIR' ),
-        ( 'SAD',	'MP0378',	'Seguridade e alta dispoñibilidade',							105, 2, 'ASIR' ),
-        ( 'PASIR',	'MP0379',	'Proxecto de administración de sistemas informáticos en rede',	 26, 2,	'ASIR' ),
-        ( 'FOL',	'MP0380',	'Formación e orientación laboral',								107, 1, 'ASIR' ),
-		( 'EIE',	'MP0381',	'Empresa e iniciativa emprendedora',							 53, 2, 'ASIR' ),
-        ( 'FCT',	'MP0382',	'Formación en centros de traballo',								384, 2,	'ASIR' ),
-		( 'SI', 	'MP0483',	'Sistemas Informáticos',										186, 1, 'DAM,DAW' ),
-        ( 'BD',		'MP0484',	'Bases de Datos',												187, 1, 'DAM,DAW' ),
-        ( 'PRG',	'MP0485',	'Programación',													240, 1, 'DAM,DAW' ),
-        ( 'AD',		'MP0486',	'Acceso a datos',												157, 2, 'DAM' ),
-        ( 'CD',		'MP0487',	'Contornos de Desenvolvemento',									107, 1, 'DAM,DAW' ),
-        ( 'DI',		'MP0488',	'Desenvolvemento de Interfaces',								140, 2,	'DAM' ),
-        ( 'PMDM',	'MP0489',	'Programación multimedia e dispositivos móbiles',				123, 2, 'DAM' ),
-        ( 'PSP',	'MP0490',	'Programación de servizos e procesos',							 70, 2,	'DAM' ),
-        ( 'SXE',	'MP0491',	'Sistemas de xestión empresarial',								 87, 2, 'DAM' ),
+        ( 'SAD',	'MP0378',	'Seguridade e alta dispoñibilidade',					105, 2, 'ASIR' ),
+        ( 'PASIR',	'MP0379',	'Proxecto de administración de sistemas informáticos en rede',	 	 26, 2,	'ASIR' ),
+        ( 'FOL',	'MP0380',	'Formación e orientación laboral',					107, 1, 'ASIR' ),
+	( 'EIE',	'MP0381',	'Empresa e iniciativa emprendedora',					 53, 2, 'ASIR' ),
+        ( 'FCT',	'MP0382',	'Formación en centros de traballo',					384, 2,	'ASIR' ),
+	( 'SI', 	'MP0483',	'Sistemas Informáticos',						186, 1, 'DAM,DAW' ),
+        ( 'BD',		'MP0484',	'Bases de Datos',							187, 1, 'DAM,DAW' ),
+        ( 'PRG',	'MP0485',	'Programación',								240, 1, 'DAM,DAW' ),
+        ( 'AD',		'MP0486',	'Acceso a datos',							157, 2, 'DAM' ),
+        ( 'CD',		'MP0487',	'Contornos de Desenvolvemento',						107, 1, 'DAM,DAW' ),
+        ( 'DI',		'MP0488',	'Desenvolvemento de Interfaces',					140, 2,	'DAM' ),
+        ( 'PMDM',	'MP0489',	'Programación multimedia e dispositivos móbiles',			123, 2, 'DAM' ),
+        ( 'PSP',	'MP0490',	'Programación de servizos e procesos',					 70, 2,	'DAM' ),
+        ( 'SXE',	'MP0491',	'Sistemas de xestión empresarial',					 87, 2, 'DAM' ),
         ( 'PDAM',	'MP0492',	'Proxecto de desenvolvemento de aplicacións multiplaforma',		 26, 2,	'DAM' ),
-        ( 'FOL',	'MP0493',	'Formación e orientación laboral',								107, 1, 'DAM' ),
-        ( 'EIE',	'MP0494',	'Empresa e iniciativa emprendedora',							 53, 2, 'DAM' ),
-        ( 'FCT',	'MP0495',	'Formación en centros de traballo',								384, 2, 'DAM' ),
-        ( 'DWBC',	'MP0612',	'Desenvolvemento Web en contorno Cliente',						157, 2, 'DAW' ),
-        ( 'DWBS',	'MP0613',	'Desenvolvemento Web en contorno Servidor',						175, 2, 'DAW' ),
-        ( 'DAW',	'MP0614',	'Despregamento de Aplicacións Web',								 88, 2, 'DAW' ),
-        ( 'DIW',	'MP0615',	'Deseño de Interfaces Web',										157, 2, 'DAW' ),
-        ( 'PDAW',	'MP0616',	'Proxecto de desenvolvemento de Aplicacións Web',				 26, 2, 'DAW' ),
-        ( 'FOL',	'MP0617',	'Formación e orientación laboral',								107, 1, 'DAW' ),
-        ( 'EIE',	'MP0618',	'Empresa e iniciativa emprendedora',							 53, 2, 'DAW' ),
-        ( 'FCT',	'MP0619',	'Formación en centros de traballo',								384, 2, 'DAW' )
+        ( 'FOL',	'MP0493',	'Formación e orientación laboral',					107, 1, 'DAM' ),
+        ( 'EIE',	'MP0494',	'Empresa e iniciativa emprendedora',					 53, 2, 'DAM' ),
+        ( 'FCT',	'MP0495',	'Formación en centros de traballo',					384, 2, 'DAM' ),
+        ( 'DWBC',	'MP0612',	'Desenvolvemento Web en contorno Cliente',				157, 2, 'DAW' ),
+        ( 'DWBS',	'MP0613',	'Desenvolvemento Web en contorno Servidor',				175, 2, 'DAW' ),
+        ( 'DAW',	'MP0614',	'Despregamento de Aplicacións Web',					 88, 2, 'DAW' ),
+        ( 'DIW',	'MP0615',	'Deseño de Interfaces Web',						157, 2, 'DAW' ),
+        ( 'PDAW',	'MP0616',	'Proxecto de desenvolvemento de Aplicacións Web',			 26, 2, 'DAW' ),
+        ( 'FOL',	'MP0617',	'Formación e orientación laboral',					107, 1, 'DAW' ),
+        ( 'EIE',	'MP0618',	'Empresa e iniciativa emprendedora',					 53, 2, 'DAW' ),
+        ( 'FCT',	'MP0619',	'Formación en centros de traballo',					384, 2, 'DAW' )
         ;
 #*******************************************************************************************
 #	CREAMOS LOS GRUPOS DE USUARIOS:	Direccion, Alumnado, Profesorado
@@ -145,11 +145,11 @@ CREATE VIEW 		CicloDAW	AS SELECT sigla, codigo, nombre, horas, curso FROM Modulo
 #-------------------------------------------------------------------------------------------
 #	GRANT <permiso> ON <tabla> TO <Rol1>, <Rol2>, ..., <Rol3>;
 #*******************************************************************************************
-GRANT ALL ON Modulo		TO Direccion 		WITH GRANT OPTION;
+GRANT ALL ON Modulo	TO Direccion 		WITH GRANT OPTION;
 # Se le dan los permisos a las vistas para más adelante asignárselas a los alumnos
-GRANT ALL ON Modulo		TO VistaASIR 		WITH GRANT OPTION;
-GRANT ALL ON Modulo		TO VistaDAM 		WITH GRANT OPTION;
-GRANT ALL ON Modulo		TO VistaDAW 		WITH GRANT OPTION;
+GRANT ALL ON Modulo	TO VistaASIR 		WITH GRANT OPTION;
+GRANT ALL ON Modulo	TO VistaDAM 		WITH GRANT OPTION;
+GRANT ALL ON Modulo	TO VistaDAW 		WITH GRANT OPTION;
 GRANT ALL ON VistaASIR	TO ProfesoradoASIR 	WITH GRANT OPTION;
 GRANT ALL ON VistaDAM	TO ProfesoradoDAM 	WITH GRANT OPTION;
 GRANT ALL ON VistaDAW	TO ProfesoradoDAW 	WITH GRANT OPTION;
@@ -161,9 +161,9 @@ GRANT ALL ON VistaDAW	TO ProfesoradoDAW 	WITH GRANT OPTION;
 #	...........................
 #	CREATE USER <direccionN> IDENTIFIED BY 'dir' DEFAULT ROLE 'Rol1';
 #*******************************************************************************************
-DROP USER IF EXISTS	Director;				CREATE USER Director				IDENTIFIED BY 'dir' 	DEFAULT ROLE Direccion;
-DROP USER IF EXISTS Vicedirector;			CREATE USER Vicedirector			IDENTIFIED BY 'vic'		DEFAULT ROLE Direccion;
-DROP USER IF EXISTS Secretario;				CREATE USER Secretario				IDENTIFIED BY 'sec'		DEFAULT ROLE Direccion;
+DROP USER IF EXISTS	Director;		CREATE USER Director			IDENTIFIED BY 'dir' 		DEFAULT ROLE Direccion;
+DROP USER IF EXISTS Vicedirector;		CREATE USER Vicedirector		IDENTIFIED BY 'vic'		DEFAULT ROLE Direccion;
+DROP USER IF EXISTS Secretario;			CREATE USER Secretario			IDENTIFIED BY 'sec'		DEFAULT ROLE Direccion;
 DROP USER IF EXISTS JefeEstudiosDiurno;		CREATE USER JefeEstudiosDiurno		IDENTIFIED BY 'jed'		DEFAULT ROLE Direccion;
 DROP USER IF EXISTS JefeEstudiosNocturno;	CREATE USER JefeEstudiosNocturno  	IDENTIFIED BY 'jen'		DEFAULT ROLE Direccion;
 
@@ -176,23 +176,23 @@ DROP USER IF EXISTS JefeEstudiosNocturno;	CREATE USER JefeEstudiosNocturno  	IDE
 #	CREATE USER <profesorN> IDENTIFIED BY 'pro' DEFAULT ROLE 'Rol2';
 #*******************************************************************************************
 # Profesores Ciclo ASIR
-DROP USER IF EXISTS	Prof_01ASIR;	CREATE USER Prof_01ASIR		IDENTIFIED BY 'pro'		DEFAULT ROLE ProfesoradoASIR;
-DROP USER IF EXISTS	Prof_02ASIR;	CREATE USER Prof_02ASIR		IDENTIFIED BY 'pro'		DEFAULT ROLE ProfesoradoASIR;
-DROP USER IF EXISTS	Prof_03ASIR;	CREATE USER Prof_03ASIR		IDENTIFIED BY 'pro'		DEFAULT ROLE ProfesoradoASIR;
-DROP USER IF EXISTS	Prof_04ASIR;	CREATE USER Prof_04ASIR		IDENTIFIED BY 'pro'		DEFAULT ROLE ProfesoradoASIR;
-DROP USER IF EXISTS	Prof_05ASIR;	CREATE USER Prof_05ASIR		IDENTIFIED BY 'pro'		DEFAULT ROLE ProfesoradoASIR;
+DROP USER IF EXISTS	Prof_01ASIR;	CREATE USER Prof_01ASIR		IDENTIFIED BY 'pro'	DEFAULT ROLE ProfesoradoASIR;
+DROP USER IF EXISTS	Prof_02ASIR;	CREATE USER Prof_02ASIR		IDENTIFIED BY 'pro'	DEFAULT ROLE ProfesoradoASIR;
+DROP USER IF EXISTS	Prof_03ASIR;	CREATE USER Prof_03ASIR		IDENTIFIED BY 'pro'	DEFAULT ROLE ProfesoradoASIR;
+DROP USER IF EXISTS	Prof_04ASIR;	CREATE USER Prof_04ASIR		IDENTIFIED BY 'pro'	DEFAULT ROLE ProfesoradoASIR;
+DROP USER IF EXISTS	Prof_05ASIR;	CREATE USER Prof_05ASIR		IDENTIFIED BY 'pro'	DEFAULT ROLE ProfesoradoASIR;
 # Profesores Ciclo DAM
-DROP USER IF EXISTS	Prof_01DAM;		CREATE USER Prof_01DAM		IDENTIFIED BY 'pro'		DEFAULT ROLE ProfesoradoDAM;
-DROP USER IF EXISTS	Prof_02DAM;		CREATE USER Prof_02DAM		IDENTIFIED BY 'pro'  	DEFAULT ROLE ProfesoradoDAM;
-DROP USER IF EXISTS	Prof_03DAM;		CREATE USER Prof_03DAM		IDENTIFIED BY 'pro'		DEFAULT ROLE ProfesoradoDAM;
-DROP USER IF EXISTS	Prof_04DAM;		CREATE USER Prof_04DAM		IDENTIFIED BY 'pro'		DEFAULT ROLE ProfesoradoDAM;
-DROP USER IF EXISTS	Prof_05DAM;		CREATE USER Prof_05DAM		IDENTIFIED BY 'pro'		DEFAULT ROLE ProfesoradoDAW;
+DROP USER IF EXISTS	Prof_01DAM;	CREATE USER Prof_01DAM		IDENTIFIED BY 'pro'	DEFAULT ROLE ProfesoradoDAM;
+DROP USER IF EXISTS	Prof_02DAM;	CREATE USER Prof_02DAM		IDENTIFIED BY 'pro'  	DEFAULT ROLE ProfesoradoDAM;
+DROP USER IF EXISTS	Prof_03DAM;	CREATE USER Prof_03DAM		IDENTIFIED BY 'pro'	DEFAULT ROLE ProfesoradoDAM;
+DROP USER IF EXISTS	Prof_04DAM;	CREATE USER Prof_04DAM		IDENTIFIED BY 'pro'	DEFAULT ROLE ProfesoradoDAM;
+DROP USER IF EXISTS	Prof_05DAM;	CREATE USER Prof_05DAM		IDENTIFIED BY 'pro'	DEFAULT ROLE ProfesoradoDAW;
 # Profesores Ciclo DAW
-DROP USER IF EXISTS	Prof_01DAW;		CREATE USER Prof_01DAW		IDENTIFIED BY 'pro'		DEFAULT ROLE ProfesoradoDAW;
-DROP USER IF EXISTS	Prof_02DAW;		CREATE USER Prof_02DAW		IDENTIFIED BY 'pro'		DEFAULT ROLE ProfesoradoDAW;
-DROP USER IF EXISTS	Prof_03DAW;		CREATE USER Prof_03DAW		IDENTIFIED BY 'pro'		DEFAULT ROLE ProfesoradoDAW;
-DROP USER IF EXISTS	Prof_04DAW;		CREATE USER Prof_04DAW		IDENTIFIED BY 'pro'		DEFAULT ROLE ProfesoradoDAW;
-DROP USER IF EXISTS	Prof_05DAW;		CREATE USER Prof_05DAW		IDENTIFIED BY 'pro'		DEFAULT ROLE ProfesoradoDAW;
+DROP USER IF EXISTS	Prof_01DAW;	CREATE USER Prof_01DAW		IDENTIFIED BY 'pro'	DEFAULT ROLE ProfesoradoDAW;
+DROP USER IF EXISTS	Prof_02DAW;	CREATE USER Prof_02DAW		IDENTIFIED BY 'pro'	DEFAULT ROLE ProfesoradoDAW;
+DROP USER IF EXISTS	Prof_03DAW;	CREATE USER Prof_03DAW		IDENTIFIED BY 'pro'	DEFAULT ROLE ProfesoradoDAW;
+DROP USER IF EXISTS	Prof_04DAW;	CREATE USER Prof_04DAW		IDENTIFIED BY 'pro'	DEFAULT ROLE ProfesoradoDAW;
+DROP USER IF EXISTS	Prof_05DAW;	CREATE USER Prof_05DAW		IDENTIFIED BY 'pro'	DEFAULT ROLE ProfesoradoDAW;
 
 #*******************************************************************************************
 #	DAMOS LOS RESPECTIVOS PRIVILEGIOS A LOS GRUPOS DEL ALUMNADO
