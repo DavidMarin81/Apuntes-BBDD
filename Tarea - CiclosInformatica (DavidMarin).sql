@@ -25,20 +25,20 @@ USE CiclosInformatica;
 #		Índice				->	codigo
 #*******************************************************************************************
 CREATE TABLE Modulo (
-					idModulo 			INT AUTO_INCREMENT, 
-					sigla 				VARCHAR(5),
-					codigo 				VARCHAR(6),
-                    nombre				TEXT,
-					horas 				INT,
-					curso 				INT,
-					ciclo 				TEXT,
+				idModulo 			INT AUTO_INCREMENT, 
+				sigla 				VARCHAR(5),
+				codigo 				VARCHAR(6),
+                   		nombre				TEXT,
+				horas 				INT,
+				curso 				INT,
+				ciclo 				TEXT,
 	CONSTRAINT		PK_Modulo			PRIMARY KEY 	( idModulo ),					#PK  -> PRIMARY KEY
 	#CONSTRAINT		UK_Sigla			UNIQUE KEY 	( sigla ),					#UK  -> UNIQUE KEY
 	CONSTRAINT		UK_Codigo			UNIQUE KEY 	( codigo ),					#UK  -> UNIQUE KEY
-	CONSTRAINT		INN_Sigla			CHECK 		( sigla 		IS NOT NULL ),	#INN -> IS NOT NULL
-	CONSTRAINT		INN_Codigo			CHECK 		( codigo 		IS NOT NULL ),	#INN -> IS NOT NULL
-	CONSTRAINT		INN_Nombre			CHECK 		( nombre 		IS NOT NULL ),	#INN -> IS NOT NULL
-	CONSTRAINT		INN_Horas			CHECK 		( horas 		IS NOT NULL ),	#INN -> IS NOT NULL
+	CONSTRAINT		INN_Sigla			CHECK 		( sigla 		IS NOT NULL ),		#INN -> IS NOT NULL
+	CONSTRAINT		INN_Codigo			CHECK 		( codigo 		IS NOT NULL ),		#INN -> IS NOT NULL
+	CONSTRAINT		INN_Nombre			CHECK 		( nombre 		IS NOT NULL ),		#INN -> IS NOT NULL
+	CONSTRAINT		INN_Horas			CHECK 		( horas 		IS NOT NULL ),		#INN -> IS NOT NULL
 	CONSTRAINT		INE_Sigla			CHECK 		( sigla 		!= '' ),		#INN -> IS NOT EMPTY
 	CONSTRAINT		INE_Codigo			CHECK 		( codigo 		!= '' ),		#INN -> IS NOT EMPTY
 	CONSTRAINT		INE_Nombre			CHECK 		( nombre 		!= '' ),		#INN -> IS NOT EMPTY
