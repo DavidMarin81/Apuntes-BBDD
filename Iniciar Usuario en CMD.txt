@@ -5,3 +5,5 @@ Para iniciar mysql desde la CMD:
 Para iniciar un usuario:
 
 	mysql -u Usuario1 -pabc
+	
+	* La contraseña va pegada a -p
