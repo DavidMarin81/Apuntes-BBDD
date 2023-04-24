@@ -14,6 +14,8 @@ GRANT SELECT ON NBA.* TO Rol1;
 GRANT INSERT ON NBA.* TO Rol2;
 GRANT DELETE ON NBA.* TO Rol3;
 GRANT UPDATE ON NBA.* TO Rol4;
+GRANT ALL 	 ON NBA.* TO Rol5;
+
 #--------------------------------------------------------------------------------------------
 #	3. Creamos los usuarios Usuario1, Usuario2, Usuario3 y Usuario4 y les asignamos los permisos.
 #--------------------------------------------------------------------------------------------
