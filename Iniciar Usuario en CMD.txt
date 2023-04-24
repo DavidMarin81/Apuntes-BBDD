@@ -1,0 +1,7 @@
+Para iniciar mysql desde la CMD:
+
+	C:\ Program files \ mysql \ mysql server 8.0 \ bin
+
+Para iniciar un usuario:
+
+	mysql -u Usuario1 -pabc
